@@ -1,5 +1,7 @@
 <?php
 require_once 'db.php';
+$result = $conn->query("SHOW STATUS LIKE 'Ssl_cipher'");
+print_r($result->fetch_assoc());
 
 $result = $conn->query("SELECT u.id_usuario, u.nombre, u.ap_paterno, u.ap_materno, u.correo, r.rol
                         FROM usuarios u
